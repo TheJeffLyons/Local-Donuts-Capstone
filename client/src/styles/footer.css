@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Ranchers&display=swap");
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  background-color: rgba(197, 197, 253, 0.356);
+  padding-bottom: 1px;
+}
+
+.company-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 80vw;
+  flex-wrap: wrap;
+}
+
+.footer-h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-family: "Rancher", cursive;
+}
+
+.social-logo {
+  width: 50px;
+  padding: 5px;
+}
+
+.social-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.social-btns {
+  display: flex;
+  flex-direction: row;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.address-name {
+  font-size: 20px;
+}
+
+.address-address {
+  font-size: 15px;
+}
+
+.footer-logo {
+  width: 300px;
+}
+
+.footer-logo-container {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}

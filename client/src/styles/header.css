@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Ranchers&display=swap");
+
+body{
+  font-family: "Rancher", cursive;
+}
+
+.logo {
+  width: 35vw;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.137);
+  width: 93.9vw;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  box-shadow: 0px 0px 8px 1px black;
+}
+
+.header-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: "Rancher", cursive;
+  font-size: smaller;
+  flex-wrap: wrap;
+}
+
+.link-header {
+  text-decoration: none;
+  color: black;
+}
+
+.header-left {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.header-right {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.header-mid {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+
+.sign-in-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(250, 57, 186);
+  color: white;
+  font-size: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 1px rgb(157, 157, 247);
+  cursor: pointer;
+  width: 108px;
+  height: 5vh;
+  text-decoration: none;
+}
+
+.sign-up-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(250, 57, 186);
+  color: rgb(250, 57, 186);
+  font-size: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 1px rgb(157, 157, 247);
+  cursor: pointer;
+  width: 100px;
+  height: 4.5vh;
+  text-decoration: none;
+}

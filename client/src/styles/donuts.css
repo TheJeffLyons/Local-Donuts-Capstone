@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Ranchers&display=swap");
+
+.donuts {
+  display: flex;
+  justify-content: center;
+}
+
+.donuts-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+  align-items: center;
+}
+
+.donuts-card-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 6px dotted rgb(157, 157, 247);
+  width: 35vw;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(250, 57, 186);
+  border-radius: 20px;
+}
+
+.donut-photo {
+  width: 20vw;
+}
+
+.donut-name {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 25px;
+  width: 30vw;
+}
+

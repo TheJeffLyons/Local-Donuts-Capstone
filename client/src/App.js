@@ -1,0 +1,36 @@
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Donuts from "./pages/Donuts";
+import Drinks from "./pages/Drinks";
+import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
+import "./App.css";
+import Footer from "./components/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <div>
+          <Header />
+        </div>
+        <ScrollToTop>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="donuts" exact element={<Donuts />} />
+          <Route path="drinks" exact element={<Drinks />} />
+          <Route path="signup" exact element={<Signup />} />
+          <Route path="signin" exact element={<Signin />} />
+        </Routes>
+        </ScrollToTop>
+        <div>
+          <Footer />
+        </div>
+      </div>
+    </BrowserRouter>
+  );
+}
+
+export default App;
