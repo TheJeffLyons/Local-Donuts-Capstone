@@ -19,7 +19,6 @@ function Drinks() {
     };
     getDonuts();
   }, []);
-  console.log(myData);
 
   const cards = myData.map((items) => {
     function DonutCard(props) {

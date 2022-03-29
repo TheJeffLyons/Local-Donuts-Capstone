@@ -1,7 +1,10 @@
 import React from "react";
+import LoginButton from "./LoginButton";
 import logo from "../images/donut-logo.png";
 import { Link } from "react-router-dom";
 import "../styles/header.css";
+import LogoutButton from "./LogoutButton";
+import OrderButton from "./OrderButton";
 
 function Header() {
   return (
@@ -25,15 +28,12 @@ function Header() {
 
           <div className="header-right">
             <div>
-              <Link to="/signup" className="sign-up-btn">
-                <h1>SIGN UP</h1>
-              </Link>
+              <OrderButton />
             </div>
 
             <div>
-              <Link to="/signin" className="sign-in-btn">
-                <h1>SIGN IN</h1>
-              </Link>
+              <LoginButton />
+              <LogoutButton />
             </div>
           </div>
         </div>
