@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Ranchers&display=swap");
+
+.item-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 6px dotted rgb(157, 157, 247);
+    width: 85vw;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+    color: rgb(250, 57, 186);
+    border-radius: 20px;
+  }
+
+  .item-name {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    width: 30vw;
+  }
+
+  
+  .item-photo {
+    width: 20vw;
+  }
+
+  .product-container{
+      border: 1px solid black;
+  }

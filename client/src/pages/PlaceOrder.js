@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+import "../styles/placeorder.css"
+
 
 let stripePromise;
 
@@ -12,7 +15,46 @@ const getStripe = () => {
 };
 
 function PlaceOrder() {
+
   const { user } = useAuth0();
+  const [myData, setMyData] = useState([]);
+
+  useEffect(() => {
+    const getDonuts = () => {
+      axios
+        .get("/api/donuts")
+        .then((res) => {
+          setMyData(res.data[0]);
+        })
+        .catch((err) => {
+          console.log(err.response.data);
+        });
+    };
+    getDonuts();
+  }, []);
+  console.log(myData);
+
+  const getname = (props) => {
+    console.log(props.name)
+  } 
+
+  const cards = myData.map((items) => {
+    function DonutCard(props) {
+      return (
+        <div className="item-card-container" key={props.id}>
+          <img className="item-photo" src={"https://" + props.photo} />
+          <h1 className="item-name">{props.name}</h1>
+          <h2 className="item-price">${props.price}</h2>
+          <button onClick={() => getname(props)}>click</button>
+          <h2>qty</h2>
+          <button>-</button>
+          <button>+</button>
+        </div>
+      );
+    }
+
+    return <DonutCard {...items} />;
+  });
 
 
 
@@ -20,7 +62,7 @@ function PlaceOrder() {
 
   let cart = [];
 
-  const [donut1, setDonut1] = React.useState(2);
+  const [donut1, setDonut1] = useState(2);
 
   const item = [
     {
@@ -33,7 +75,7 @@ function PlaceOrder() {
     },
   ];
 
-  const [donut2, setDonut2] = React.useState(3);
+  const [donut2, setDonut2] = useState(3);
 
   const item2 = {
     price: "price_1Kikm4KGMH4vYEkuyPnF6hAy",
@@ -85,12 +127,14 @@ function PlaceOrder() {
   
   return (
     <div>
+      <div>
       {JSON.stringify(user)}
       <button className="checkout-btn" onClick={redirectToCheckout}>CHECKOUT</button>
       <button onClick={additem}>add</button>
       <button onClick={deleteItem}>delete</button>
       <button onClick={additem2}>item2</button>
-      <div></div>
+      </div>
+      <div className="product-container">{cards}</div>
     </div>
   );
 }
