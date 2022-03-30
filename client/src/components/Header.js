@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "../styles/header.css";
 import LogoutButton from "./LogoutButton";
 import OrderButton from "./OrderButton";
+import LoginBanner from "./LoginBanner";
 
 function Header() {
   return (
@@ -38,6 +39,7 @@ function Header() {
           </div>
         </div>
       </nav>
+      <LoginBanner />
     </header>
   );
 }

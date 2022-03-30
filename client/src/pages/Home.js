@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LoginBanner from "../components/LoginBanner";
 import image1 from "../images/donut1.jpg";
 import image2 from "../images/donut2.jpg";
 import image3 from "../images/long-ad.jpg";
@@ -13,9 +14,7 @@ import "../styles/home.css";
 function Home() {
   return (
     <div className="home-container">
-      <div className="small-banner">
-        <h2>Sign in to place a pickup or delivery order</h2>
-      </div>
+     {/* <LoginBanner /> */}
       <div className="topbanner">
         <img className="ads-top" src={image5} />
       </div>

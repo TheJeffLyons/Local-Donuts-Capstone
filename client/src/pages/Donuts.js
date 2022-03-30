@@ -21,6 +21,10 @@ function Donuts() {
   }, []);
   console.log(myData);
 
+  const getname = (props) => {
+    console.log(props.name)
+  } 
+
   const cards = myData.map((items) => {
     function DonutCard(props) {
       return (
@@ -28,6 +32,7 @@ function Donuts() {
           <h1 className="donut-name">{props.name}</h1>
           <img className="donut-photo" src={"https://" + props.photo} />
           <h2 className="donut-price">${props.price}</h2>
+          <button onClick={() => getname(props)}>click</button>
         </div>
       );
     }
