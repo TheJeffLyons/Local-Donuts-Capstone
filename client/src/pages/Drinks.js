@@ -23,7 +23,7 @@ function Drinks() {
   const cards = myData.map((items) => {
     function DonutCard(props) {
       return (
-        <div className="drinks-card-container" key={props.id}>
+        <div className="drinks-card-container" key={props.drinks_id}>
           <h1 className="drinks-name">{props.name}</h1>
           <img className="drinks-photo" src={"https://" + props.photo} />
           <h2 className="drinks-price">${props.price}</h2>

@@ -19,18 +19,15 @@ function Donuts() {
     };
     getDonuts();
   }, []);
-  console.log(myData);
-
- 
+  
 
   const cards = myData.map((items) => {
     function DonutCard(props) {
       return (
-        <div className="donuts-card-container" key={props.id}>
+        <div className="donuts-card-container" key={props.donut_id}>
           <h1 className="donut-name">{props.name}</h1>
           <img className="donut-photo" src={"https://" + props.photo} />
           <h2 className="donut-price">${props.price}</h2>
-          
         </div>
       );
     }
