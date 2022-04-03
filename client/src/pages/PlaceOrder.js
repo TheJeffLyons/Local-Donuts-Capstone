@@ -17,7 +17,7 @@ function PlaceOrder() {
   const { user } = useAuth0();
   const userData = JSON.stringify(user);
 
-  const [myUser, setMyUser] = useState(userData);
+  const [myUser, setMyUser] = useState(user);
   const [cartData, setCartData] = useState([]);
   const [receiptData, setReceiptData] = useState([]);
   const [myData, setMyData] = useState([]);
@@ -119,9 +119,13 @@ function PlaceOrder() {
       return (
         <div className="button-container">
           <div className="plus-minus">
-          <button className="minus-plus-button"  onClick={subAmount1}>-</button>
-          <h1 className="count">{amount1}</h1>
-          <button className="minus-plus-button"  onClick={addAmount1}>+</button>
+            <button className="minus-plus-button" onClick={subAmount1}>
+              -
+            </button>
+            <h1 className="count">{amount1}</h1>
+            <button className="minus-plus-button" onClick={addAmount1}>
+              +
+            </button>
           </div>
           <button
             className="add-button"
@@ -135,14 +139,14 @@ function PlaceOrder() {
               setButton1(false);
             }}
           >
-            Add
+            <span>Add</span>
           </button>
         </div>
       );
     } else
       return (
         <button
-        className="delete-button"
+          className="delete-button"
           onClick={() => {
             deleteDonut(myData[0].stripe_id, myData[0].name);
             setButton1(true);
@@ -152,16 +156,19 @@ function PlaceOrder() {
         </button>
       );
   };
+
   const showButton2 = () => {
     if (button2 === true) {
       return (
-        <div>
-          <button onClick={subAmount2}>-</button>
-          {amount2}
-          <button onClick={addAmount2}>+</button>
-          <br></br>
+        <div className="button-container">
+          <div className="plus-minus">
+          <button className="minus-plus-button" onClick={subAmount2}>-</button>
+          <h1 className="count">{amount2}</h1>
+          <button className="minus-plus-button" onClick={addAmount2}>+</button>
+          </div>
+          
           <button
-          className="add-button"
+            className="add-button"
             onClick={() => {
               addDonut(
                 myData[1].stripe_id,
@@ -172,14 +179,14 @@ function PlaceOrder() {
               setButton2(false);
             }}
           >
-            Add
+           <span>Add</span>
           </button>
         </div>
       );
     } else
       return (
         <button
-        className="delete-button"
+          className="delete-button"
           onClick={() => {
             deleteDonut(myData[1].stripe_id, myData[1].name);
             setButton2(true);
@@ -192,14 +199,14 @@ function PlaceOrder() {
   const showButton3 = () => {
     if (button3 === true) {
       return (
-        <div>
-          
-          <button onClick={subAmount3}>-</button>
-          {amount3}
-          <button onClick={addAmount3}>+</button>
-          <br></br>
+        <div className="button-container">
+        <div className="plus-minus">
+        <button className="minus-plus-button" onClick={subAmount3}>-</button>
+        <h1 className="count">{amount3}</h1>
+        <button className="minus-plus-button" onClick={addAmount3}>+</button>
+        </div>
           <button
-          className="add-button"
+            className="add-button"
             onClick={() => {
               addDonut(
                 myData[2].stripe_id,
@@ -210,14 +217,14 @@ function PlaceOrder() {
               setButton3(false);
             }}
           >
-            Add
+            <span>Add</span>
           </button>
         </div>
       );
     } else
       return (
         <button
-        className="delete-button"
+          className="delete-button"
           onClick={() => {
             deleteDonut(myData[2].stripe_id, myData[2].name);
             setButton3(true);
@@ -230,13 +237,14 @@ function PlaceOrder() {
   const showButton4 = () => {
     if (button4 === true) {
       return (
-        <div>
-          <button onClick={subAmount4}>-</button>
-          {amount4}
-          <button onClick={addAmount4}>+</button>
-          <br></br>
+        <div className="button-container">
+        <div className="plus-minus">
+        <button className="minus-plus-button" onClick={subAmount4}>-</button>
+        <h1 className="count">{amount4}</h1>
+        <button className="minus-plus-button" onClick={addAmount4}>+</button>
+        </div>
           <button
-          className="add-button"
+            className="add-button"
             onClick={() => {
               addDonut(
                 myData[3].stripe_id,
@@ -247,14 +255,14 @@ function PlaceOrder() {
               setButton4(false);
             }}
           >
-            Add
+            <span>Add</span>
           </button>
         </div>
       );
     } else
       return (
         <button
-        className="delete-button"
+          className="delete-button"
           onClick={() => {
             deleteDonut(myData[3].stripe_id, myData[3].name);
             setButton4(true);
@@ -267,13 +275,14 @@ function PlaceOrder() {
   const showButton5 = () => {
     if (button5 === true) {
       return (
-        <div>
-          <button onClick={subAmount5}>-</button>
-          {amount5}
-          <button onClick={addAmount5}>+</button>
-          <br></br>
+        <div className="button-container">
+          <div className="plus-minus">
+          <button className="minus-plus-button" onClick={subAmount5}>-</button>
+          <h1 className="count">{amount5}</h1>
+          <button className="minus-plus-button" onClick={addAmount5}>+</button>
+          </div>
           <button
-          className="add-button"
+            className="add-button"
             onClick={() => {
               addDonut(
                 myData[4].stripe_id,
@@ -284,14 +293,14 @@ function PlaceOrder() {
               setButton5(false);
             }}
           >
-            Add
+            <span>Add</span>
           </button>
         </div>
       );
     } else
       return (
         <button
-        className="delete-button"
+          className="delete-button"
           onClick={() => {
             deleteDonut(myData[4].stripe_id, myData[4].name);
             setButton5(true);
@@ -304,13 +313,14 @@ function PlaceOrder() {
   const showButton6 = () => {
     if (button6 === true) {
       return (
-        <div>
-          <button onClick={subAmount6}>-</button>
-          {amount6}
-          <button onClick={addAmount6}>+</button>
-          <br></br>
+        <div className="button-container">
+          <div className="plus-minus">
+          <button className="minus-plus-button" onClick={subAmount6}>-</button>
+          <h1 className="count">{amount6}</h1>
+          <button className="minus-plus-button" onClick={addAmount6}>+</button>
+          </div>
           <button
-          className="add-button"
+            className="add-button"
             onClick={() => {
               addDonut(
                 myData[5].stripe_id,
@@ -321,14 +331,14 @@ function PlaceOrder() {
               setButton6(false);
             }}
           >
-            Add
+           <span>Add</span>
           </button>
         </div>
       );
     } else
       return (
         <button
-        className="delete-button"
+          className="delete-button"
           onClick={() => {
             deleteDonut(myData[5].stripe_id, myData[5].name);
             setButton6(true);
@@ -428,11 +438,18 @@ function PlaceOrder() {
     console.log("Stripe checkout error", error);
   };
 
+
   return (
     <div className="order-page">
+      <div>
       <h1>Welcome, select your items below.</h1>
+      </div>
+      <div className="order-options">
+        {/* <a><img src={donutIcon} /></a> */}
+      </div>
       <div className="order-container">
         <div className="product-container">
+         
           <div className="item-card-container" id="card0">
             {cards[0]}
 
@@ -472,7 +489,9 @@ function PlaceOrder() {
 
         <div className="receipt-container">
           <div className="another-receipt-container">
-            <h1><u>Cart</u></h1>
+            <div className="cart-icon-container">
+              <img className="cart-icon" src='https://res.cloudinary.com/redhero/image/upload/v1648941030/Donuts/shopping-cart_jltry0.png'/>
+            </div>
             {receiptItems}
             <div>
               {/* <h3>Welcome {user.name}!</h3>

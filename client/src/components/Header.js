@@ -1,6 +1,5 @@
 import React from "react";
 import LoginButton from "./LoginButton";
-import logo from "../images/donut-logo.png";
 import { Link } from "react-router-dom";
 import "../styles/header.css";
 import LogoutButton from "./LogoutButton";
@@ -14,7 +13,7 @@ function Header() {
         <div className="header-links">
           <div className="header-left">
             <Link to="/donuts" className="link-header">
-              <h1>Donuts</h1>
+              <h1 className="donut-menu">Donuts</h1>
             </Link>
             <Link to="/drinks" className="link-header">
               <h1>Drinks</h1>
@@ -23,7 +22,7 @@ function Header() {
 
           <div className="header-mid">
             <Link to="/">
-              <img src={logo} className="logo" />
+              <img src='https://res.cloudinary.com/redhero/image/upload/v1648940799/Donuts/donut-logo_miqpyr.png' className="logo" />
             </Link>
           </div>
 

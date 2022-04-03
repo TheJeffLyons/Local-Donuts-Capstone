@@ -1,8 +1,5 @@
 import React from "react";
-import fblogo from "../images/fb-logo.png";
-import twitterlogo from "../images/twitter-logo.png";
-import instalogo from "../images/insta-logo.png";
-import logo from "../images/donut-logo.png";
+
 import "../styles/footer.css";
 
 function Footer() {
@@ -20,15 +17,15 @@ function Footer() {
                   <div className="social-container">
                           <h2 className="footer-h2">Stay Connected</h2>
                           <div className="social-btns">
-                          <img className="social-logo" src={fblogo} />
+                          <img className="social-logo" src='https://res.cloudinary.com/redhero/image/upload/v1648940728/Donuts/fb-logo_lk3uqq.png' />
                           
-                          <img className="social-logo" src={twitterlogo} />
+                          <img className="social-logo" src='https://res.cloudinary.com/redhero/image/upload/v1648940728/Donuts/insta-logo_batr1m.png' />
                           
-                          <img className="social-logo" src={instalogo} />
+                          <img className="social-logo" src='https://res.cloudinary.com/redhero/image/upload/v1648940728/Donuts/twitter-logo_wwhly5.png' />
                           </div>
             </div>
             <div className="footer-logo-container">
-              <img className="footer-logo" src={logo} />
+              <img className="footer-logo" src='https://res.cloudinary.com/redhero/image/upload/v1648940799/Donuts/donut-logo_miqpyr.png' />
             </div>
       </div>
       <div className="copyright">
