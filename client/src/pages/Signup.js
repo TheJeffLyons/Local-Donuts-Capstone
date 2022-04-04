@@ -19,12 +19,12 @@ function Signup() {
     onSubmit: (values) => {
       axios
         .post("/api/signup", values)
-        .then((res) => {
-          alert(`User ${values.email} was created`);
-        })
-        .then((res) => {
-          navigate("/signin");
-        });
+        // .then((res) => {
+        //   alert(`User ${values.email} was created`);
+        // })
+        // .then((res) => {
+        //   navigate("/signin");
+        // });
     },
   });
 

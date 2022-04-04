@@ -22,6 +22,7 @@ function Donuts() {
   
 
   const cards = myData.map((items) => {
+    
     function DonutCard(props) {
       return (
         <div className="donuts-card-container" key={props.donut_id}>

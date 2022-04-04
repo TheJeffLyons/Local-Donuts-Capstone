@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { loadStripe } from "@stripe/stripe-js";
+import { useFormik } from "formik";
 import axios from "axios";
 import "../styles/placeorder.css";
 
@@ -33,6 +34,7 @@ function PlaceOrder() {
   const [button4, setButton4] = useState(true);
   const [button5, setButton5] = useState(true);
   const [button6, setButton6] = useState(true);
+  const [formBtn, setFormBtn] = useState(false);
 
   //call for donut products
 
@@ -57,26 +59,31 @@ function PlaceOrder() {
       setAmount1(amount1 + 1);
     }
   }
+
   function addAmount2() {
     if (amount2 < 100) {
       setAmount2(amount2 + 1);
     }
   }
+
   function addAmount3() {
     if (amount3 < 100) {
       setAmount3(amount3 + 1);
     }
   }
+
   function addAmount4() {
     if (amount4 < 100) {
       setAmount4(amount4 + 1);
     }
   }
+
   function addAmount5() {
     if (amount5 < 100) {
       setAmount5(amount5 + 1);
     }
   }
+
   function addAmount6() {
     if (amount6 < 100) {
       setAmount6(amount6 + 1);
@@ -88,26 +95,31 @@ function PlaceOrder() {
       setAmount1(amount1 - 1);
     }
   }
+
   function subAmount2() {
     if (amount2 >= 2) {
       setAmount2(amount2 - 1);
     }
   }
+
   function subAmount3() {
     if (amount3 >= 2) {
       setAmount3(amount3 - 1);
     }
   }
+
   function subAmount4() {
     if (amount4 >= 2) {
       setAmount4(amount4 - 1);
     }
   }
+
   function subAmount5() {
     if (amount5 >= 2) {
       setAmount5(amount5 - 1);
     }
   }
+
   function subAmount6() {
     if (amount6 >= 2) {
       setAmount6(amount6 - 1);
@@ -162,11 +174,15 @@ function PlaceOrder() {
       return (
         <div className="button-container">
           <div className="plus-minus">
-          <button className="minus-plus-button" onClick={subAmount2}>-</button>
-          <h1 className="count">{amount2}</h1>
-          <button className="minus-plus-button" onClick={addAmount2}>+</button>
+            <button className="minus-plus-button" onClick={subAmount2}>
+              -
+            </button>
+            <h1 className="count">{amount2}</h1>
+            <button className="minus-plus-button" onClick={addAmount2}>
+              +
+            </button>
           </div>
-          
+
           <button
             className="add-button"
             onClick={() => {
@@ -179,7 +195,7 @@ function PlaceOrder() {
               setButton2(false);
             }}
           >
-           <span>Add</span>
+            <span>Add</span>
           </button>
         </div>
       );
@@ -200,11 +216,15 @@ function PlaceOrder() {
     if (button3 === true) {
       return (
         <div className="button-container">
-        <div className="plus-minus">
-        <button className="minus-plus-button" onClick={subAmount3}>-</button>
-        <h1 className="count">{amount3}</h1>
-        <button className="minus-plus-button" onClick={addAmount3}>+</button>
-        </div>
+          <div className="plus-minus">
+            <button className="minus-plus-button" onClick={subAmount3}>
+              -
+            </button>
+            <h1 className="count">{amount3}</h1>
+            <button className="minus-plus-button" onClick={addAmount3}>
+              +
+            </button>
+          </div>
           <button
             className="add-button"
             onClick={() => {
@@ -238,11 +258,15 @@ function PlaceOrder() {
     if (button4 === true) {
       return (
         <div className="button-container">
-        <div className="plus-minus">
-        <button className="minus-plus-button" onClick={subAmount4}>-</button>
-        <h1 className="count">{amount4}</h1>
-        <button className="minus-plus-button" onClick={addAmount4}>+</button>
-        </div>
+          <div className="plus-minus">
+            <button className="minus-plus-button" onClick={subAmount4}>
+              -
+            </button>
+            <h1 className="count">{amount4}</h1>
+            <button className="minus-plus-button" onClick={addAmount4}>
+              +
+            </button>
+          </div>
           <button
             className="add-button"
             onClick={() => {
@@ -277,9 +301,13 @@ function PlaceOrder() {
       return (
         <div className="button-container">
           <div className="plus-minus">
-          <button className="minus-plus-button" onClick={subAmount5}>-</button>
-          <h1 className="count">{amount5}</h1>
-          <button className="minus-plus-button" onClick={addAmount5}>+</button>
+            <button className="minus-plus-button" onClick={subAmount5}>
+              -
+            </button>
+            <h1 className="count">{amount5}</h1>
+            <button className="minus-plus-button" onClick={addAmount5}>
+              +
+            </button>
           </div>
           <button
             className="add-button"
@@ -315,9 +343,13 @@ function PlaceOrder() {
       return (
         <div className="button-container">
           <div className="plus-minus">
-          <button className="minus-plus-button" onClick={subAmount6}>-</button>
-          <h1 className="count">{amount6}</h1>
-          <button className="minus-plus-button" onClick={addAmount6}>+</button>
+            <button className="minus-plus-button" onClick={subAmount6}>
+              -
+            </button>
+            <h1 className="count">{amount6}</h1>
+            <button className="minus-plus-button" onClick={addAmount6}>
+              +
+            </button>
           </div>
           <button
             className="add-button"
@@ -331,7 +363,7 @@ function PlaceOrder() {
               setButton6(false);
             }}
           >
-           <span>Add</span>
+            <span>Add</span>
           </button>
         </div>
       );
@@ -351,6 +383,8 @@ function PlaceOrder() {
 
   //function to add product to cart
 
+  const [cartTotal, setCartTotal] = useState(0)
+
   const addDonut = (item, qty, price, name) => {
     let newItem = {
       price: item,
@@ -363,8 +397,11 @@ function PlaceOrder() {
       qty: qty,
     };
 
+    let addTotal = price * qty
+
     setCartData([...cartData, newItem]);
     setReceiptData([...receiptData, newReceipt]);
+    setCartTotal(cartTotal + addTotal)
   };
 
   const deleteDonut = (id, item2, item3) => {
@@ -417,15 +454,18 @@ function PlaceOrder() {
     return <ReceiptCard {...items} />;
   });
 
-  // stripe required below
+  const ShowForm = () => {
+    if (formBtn === true) {
+      return <div></div>;
+    }
+  };
 
-  // console.log(cartData);
-  // console.log(receiptData);
-  // console.log(myUser)
+  // stripe required below
 
   const checkoutOptions = {
     lineItems: cartData,
     mode: "payment",
+    shippingAddressCollection: { allowedCountries: ["US"] },
     successUrl: `${window.location.origin}/thanks`,
     cancelUrl: `${window.location.origin}/order`,
   };
@@ -438,18 +478,16 @@ function PlaceOrder() {
     console.log("Stripe checkout error", error);
   };
 
-
   return (
     <div className="order-page">
       <div>
-      <h1>Welcome, select your items below.</h1>
+        <h1>Welcome, select your items below.</h1>
       </div>
       <div className="order-options">
         {/* <a><img src={donutIcon} /></a> */}
       </div>
       <div className="order-container">
         <div className="product-container">
-         
           <div className="item-card-container" id="card0">
             {cards[0]}
 
@@ -490,12 +528,17 @@ function PlaceOrder() {
         <div className="receipt-container">
           <div className="another-receipt-container">
             <div className="cart-icon-container">
-              <img className="cart-icon" src='https://res.cloudinary.com/redhero/image/upload/v1648941030/Donuts/shopping-cart_jltry0.png'/>
+              <img
+                className="cart-icon"
+                src="https://res.cloudinary.com/redhero/image/upload/v1648941030/Donuts/shopping-cart_jltry0.png"
+              />
             </div>
             {receiptItems}
             <div>
-              {/* <h3>Welcome {user.name}!</h3>
-              <h4>{userEmail}</h4> */}
+              <div><h1>Total: ${cartTotal}</h1></div>
+              <button>Pickup</button>
+              <button onClick={() => setFormBtn(true)}>Delivery</button>
+              <div>{ShowForm()}</div>
               <button className="checkout-btn" onClick={redirectToCheckout}>
                 CHECKOUT
               </button>
