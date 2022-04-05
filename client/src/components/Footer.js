@@ -17,11 +17,19 @@ function Footer() {
                   <div className="social-container">
                           <h2 className="footer-h2">Stay Connected</h2>
                           <div className="social-btns">
+
+                          <a target={'_blank'} href='https://www.facebook.com/'>
                           <img className="social-logo" src='https://res.cloudinary.com/redhero/image/upload/v1648940728/Donuts/fb-logo_lk3uqq.png' />
-                          
+                          </a>
+
+                          <a target={'_blank'} href='https://www.instagram.com/'>
                           <img className="social-logo" src='https://res.cloudinary.com/redhero/image/upload/v1648940728/Donuts/insta-logo_batr1m.png' />
-                          
+                          </a>
+
+                          <a target={'_blank'} href='https://www.twitter.com/'>
                           <img className="social-logo" src='https://res.cloudinary.com/redhero/image/upload/v1648940728/Donuts/twitter-logo_wwhly5.png' />
+                          </a>
+
                           </div>
             </div>
             <div className="footer-logo-container">

@@ -4,23 +4,23 @@ import axios from "axios";
 import "../styles/drinks.css";
 
 function Drinks() {
-  const [myData, setMyData] = useState([]);
+  const [drinkData, setDrinkData] = useState([]);
 
   useEffect(() => {
-    const getDonuts = () => {
+    const getDrinks = () => {
       axios
         .get("/api/drinks")
         .then((res) => {
-          setMyData(res.data[0]);
+          setDrinkData(res.data[0]);
         })
         .catch((err) => {
           console.log(err.response.data);
         });
     };
-    getDonuts();
+    getDrinks();
   }, []);
 
-  const cards = myData.map((items) => {
+  const cards = drinkData.map((items) => {
     function DonutCard(props) {
       return (
         <div className="drinks-card-container" key={props.drinks_id}>

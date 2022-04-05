@@ -17,8 +17,7 @@ function Signup() {
       password: "",
     },
     onSubmit: (values) => {
-      axios
-        .post("/api/signup", values)
+      axios.post("/api/signup", values)
         // .then((res) => {
         //   alert(`User ${values.email} was created`);
         // })

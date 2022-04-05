@@ -3,8 +3,6 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Donuts from "./pages/Donuts";
 import Drinks from "./pages/Drinks";
-import Signin from "./pages/Signin";
-import Signup from "./pages/Signup";
 import Thankyou from "./pages/Thankyou";
 import PlaceOrder from "./pages/PlaceOrder";
 import "./App.css";
@@ -24,8 +22,6 @@ function App() {
             <Route path="/" exact element={<Home />} />
             <Route path="donuts" exact element={<Donuts />} />
             <Route path="drinks" exact element={<Drinks />} />
-            <Route path="signup" exact element={<Signup />} />
-            <Route path="signin" exact element={<Signin />} />
             <Route path="order" exact element={<PlaceOrder />} />
             <Route path="thanks" exact element={<Thankyou />} />
           </Routes>

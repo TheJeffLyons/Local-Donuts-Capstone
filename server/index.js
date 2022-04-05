@@ -23,11 +23,11 @@ app.get("/api/drinks", async (req, res) => {
   res.status(200).send(info);
 });
 
-app.post("/api/signup", async (req, res) => {
-  let {email, firstName, lastName, address, phone, password} = req.body;
+app.post("/api/neworder", async (req, res) => {
+  let {customer, items} = req.body;
   
-  sequelize.query(`INSERT INTO users(email, firstName, lastName, address, phone, password)
-  VALUES('${email}', '${firstName}', '${lastName}', '${address}', '${phone}', '${password}')`)
+  sequelize.query(`INSERT INTO orders(customer, items)
+  VALUES('${customer}', '${items}')`)
   .then((result) => {
     res.status(201).send(result[0])
   })
