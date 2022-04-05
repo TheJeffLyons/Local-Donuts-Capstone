@@ -10,7 +10,7 @@ const sequelize = require("./sequelize");
 //Middleware
 app.use(express.json());
 app.use(cors());
-
+app.use(express.static(path.resolve(_dirname, "../build")))
 //Get endpoints here
 
 app.get("/api/donuts", async (req, res) => {
@@ -34,6 +34,10 @@ app.post("/api/neworder", async (req, res) => {
   .catch(err => console.log(err))
 
   
+})
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(_dirname, '../build', 'index.html'))
 })
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
