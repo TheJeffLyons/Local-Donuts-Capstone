@@ -759,7 +759,7 @@ function PlaceOrder() {
 
   
     return (
-    isAuthenticated && setTimeout(() =>{ (
+    isAuthenticated &&(
     <div className="order-page">
       <div>
         <h1>Welcome {myUser}, select your items below.</h1>
@@ -863,7 +863,7 @@ function PlaceOrder() {
     </div>
   )
   
-}, 1000) 
+
 ) 
 
 
