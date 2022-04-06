@@ -754,7 +754,7 @@ function PlaceOrder() {
   };
 
   return (
-    !isAuthenticated &&(
+    isAuthenticated &&(
     <div className="order-page">
       <div>
         <h1>Welcome {myUser}, select your items below.</h1>
