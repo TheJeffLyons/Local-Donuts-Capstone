@@ -590,6 +590,10 @@ function PlaceOrder() {
       items: JSON.stringify(receiptData),
     };
 
+    if(receiptData.length === 0){
+      alert('No items in cart')
+    }else {
+
     axios
       .post("/api/neworder", body)
       // .then((res) => {
@@ -597,7 +601,7 @@ function PlaceOrder() {
       // })
       .then((res) => {
         navigate("/thanks");
-      });
+      });}
   }
 
   const addDonut = (item, qty, price, name) => {
