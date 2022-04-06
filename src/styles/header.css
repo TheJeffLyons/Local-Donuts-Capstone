@@ -44,7 +44,7 @@ ul {
   flex: 1;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: flex-end;
+  /* align-items: flex-end; */
   align-items: center;
 }
 
@@ -53,6 +53,7 @@ ul {
   align-items: center;
   flex: 1;
   flex-direction: row;
+  /* align-items: flex-end; */
   justify-content: space-evenly;
 }
 
@@ -62,45 +63,6 @@ ul {
   flex-direction: row;
 }
 
-/* .login-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(255, 255, 255);
-  border: 2px solid rgb(250, 57, 186);
-  color: rgb(250, 57, 186);
-  font-size: 13px;
-  font-weight: 550;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 10px 1px rgb(157, 157, 247);
-  cursor: pointer;
-  width: 100px;
-  height: 4.5vh;
-  text-decoration: none;
-  font-family: "Rancher", cursive;
-} */
-
-/* .login-btn:hover{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fa39ba;
-  color: white;
-  font-size: 13px;
-  font-weight: 550;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 10px 1px #9d9df7;
-  cursor: pointer;
-  width: 108px;
-  height: 5vh;
-  text-decoration: none;
-  border: none;
-  font-family: "Rancher", cursive;
-} */
 
 .logout-btn {
   display: flex;
@@ -159,28 +121,6 @@ ul {
   height: 4.5vh;
   text-decoration: none;
 }
-
-/* .placeorder-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(105, 105, 247);
-  border: 2px solid rgb(250, 57, 186);
-  color: rgb(255, 255, 255);
-  font-size: 10px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 10px 1px rgb(157, 157, 247);
-  cursor: pointer;
-  width: 150px;
-  height: 4.5vh;
-  text-decoration: none;
-} */
-
-/* .placeorder-btn:hover{
-  box-shadow: 0px 0px 10px 3px rgb(250, 57, 186);
-} */
 
 .link-header{
   display: flex;
