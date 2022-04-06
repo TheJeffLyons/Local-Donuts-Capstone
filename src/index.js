@@ -12,6 +12,9 @@ ReactDOM.render(
     domain={domain}
     clientId={clientId}
     redirectUri={`${window.location.origin}/order`}
+    onRedirectCallback={onRedirectCallback}
+    useRefreshTokens
+    cacheLocation="localstorage"
   >
     <App />
   </Auth0Provider>,
