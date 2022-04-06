@@ -15,9 +15,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <div>
+        <div className="app-header">
           <Header />
         </div>
+        <div className="app-body">
         <ScrollToTop>
           <Routes>
             <Route path="/" exact element={<Home />} />
@@ -28,7 +29,8 @@ function App() {
             <Route path="goodbye" exact element={<Goodbye />} />
           </Routes>
         </ScrollToTop>
-        <div>
+        </div>
+        <div className="app-footer">
           <Footer />
         </div>
       </div>
