@@ -18,6 +18,8 @@ ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
   width: 95%;
   /* overflow: hidden;
   position: fixed;
