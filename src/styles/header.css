@@ -18,7 +18,7 @@ ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 95%;
+  width: 100%;
   overflow: hidden;
   position: fixed;
   top: 0;
