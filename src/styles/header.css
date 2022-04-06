@@ -142,6 +142,7 @@ font-size: x-large;
   font-size: 12px;
   font-family: "Rancher", cursive;
   border-radius: 20px;
+  cursor: pointer;
  }
  
  .login-btn:hover,  .logout-btn:hover {

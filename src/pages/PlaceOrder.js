@@ -757,9 +757,9 @@ function PlaceOrder() {
     console.log("Stripe checkout error", error);
   };
 
-  setTimeout(() =>{ 
+  
     return (
-    isAuthenticated &&(
+    isAuthenticated && setTimeout(() =>{ (
     <div className="order-page">
       <div>
         <h1>Welcome {myUser}, select your items below.</h1>
@@ -863,10 +863,10 @@ function PlaceOrder() {
     </div>
   )
   
-  
+}, 1000) 
 ) 
 
-}, 1000) 
+
 
 
 }
