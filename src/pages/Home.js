@@ -7,7 +7,7 @@ function Home() {
     <div className="home-container">
      
       <div className="topbanner">
-        <img className="ads-top" src='https://res.cloudinary.com/redhero/image/upload/v1648940487/Donuts/donut-banner_kbzce3.jpg' />
+        <img className="ads-top" src='https://res.cloudinary.com/redhero/image/upload/v1649220267/Donuts/2national-doughnut-day-2020-promo_dab7u7.jpg' />
       </div>
       <div className="ads-row-1">
         <Link to="/donuts">
