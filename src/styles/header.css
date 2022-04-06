@@ -178,14 +178,14 @@ ul {
 }
 
 .link-header{
-  display: flex;
+  /* display: flex; */
   text-decoration: none;
   position: relative;
-  width: 100px;
+  /* width: 100px;
   height: 100%;
   align-content: center;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .link-header::before {
