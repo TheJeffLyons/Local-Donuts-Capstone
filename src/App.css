@@ -1,5 +1,5 @@
 body {
-  background-color: rgba(0, 72, 226, 0.288);
+  background-color: rgba(226, 218, 0, 0.288);
 }
 
 .App {
@@ -7,7 +7,7 @@ body {
   flex-direction: column;
   align-items: center;
   align-content: center;
-  justify-content: center;
+  text-align: center;
   background-color: white;
   margin-left: 30px;
   margin-right: 30px;
