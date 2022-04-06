@@ -15,9 +15,8 @@ ul {
 }
 
 .header-nav {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: inline-block;
+
   width: 95%;
   /* overflow: hidden;
   position: fixed;
@@ -28,10 +27,6 @@ ul {
   z-index: 999;
   background-color: white;
   box-shadow: 0px 0px 8px 1px black;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  align-content: center;
 }
 
 .header-links {
