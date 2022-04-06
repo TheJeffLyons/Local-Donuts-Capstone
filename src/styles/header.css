@@ -18,11 +18,11 @@ ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 95vw;
+  /* width: 95vw;
   overflow: hidden;
   position: fixed;
   top: 0;
-  margin-right: 100px;
+  margin-right: 100px; */
   /* position: fixed;
   right: 0;
   left: 0;
