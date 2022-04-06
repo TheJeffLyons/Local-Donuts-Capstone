@@ -9,7 +9,6 @@ import "./App.css";
 import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
-import Goodbye from "./pages/Goodbye";
 
 function App() {
   return (
@@ -25,8 +24,7 @@ function App() {
             <Route path="donuts" exact element={<Donuts />} />
             <Route path="drinks" exact element={<Drinks />} />
             <Route path="order" exact element={<PlaceOrder />} />
-            <Route path="thanks" exact element={<Thankyou />} />
-            <Route path="goodbye" exact element={<Goodbye />} />
+            <Route path="thanks" exact element={<Thankyou />} />            
           </Routes>
         </ScrollToTop>
         </div>
