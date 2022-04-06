@@ -22,11 +22,12 @@ ul {
   overflow: hidden;
   position: fixed;
   top: 0;
+  margin-right: 30px;
   /* position: fixed;
   right: 0;
   left: 0;
   z-index: 999; */
-  background-color: rgb(10, 123, 49);
+  background-color: rgb(10, 98, 123);
   box-shadow: 0px 0px 8px 1px black;
 }
 
