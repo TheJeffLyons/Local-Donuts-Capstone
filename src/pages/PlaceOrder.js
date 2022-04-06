@@ -16,7 +16,7 @@ const getStripe = () => {
 
 function PlaceOrder() {
 
-  const { user } = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
   const navigate = useNavigate();
 
   const dragon = setTimeout(() => {
@@ -754,6 +754,7 @@ function PlaceOrder() {
   };
 
   return (
+    !isAuthenticated &&(
     <div className="order-page">
       <div>
         <h1>Welcome {myUser}, select your items below.</h1>
@@ -855,6 +856,9 @@ function PlaceOrder() {
         </div>
       </div>
     </div>
+  )
+  
+  
   );
 }
 
