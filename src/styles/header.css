@@ -63,25 +63,6 @@ ul {
   flex-direction: row;
 }
 
-
-.sign-up-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(255, 255, 255);
-  border: 2px solid rgb(250, 57, 186);
-  color: rgb(250, 57, 186);
-  font-size: 10px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 10px 1px rgb(157, 157, 247);
-  cursor: pointer;
-  width: 100px;
-  height: 4.5vh;
-  text-decoration: none;
-}
-
 .link-header{
   display: flex;
   text-decoration: none;
@@ -92,6 +73,7 @@ ul {
   align-items: center;
   justify-content: center;
   color: black;
+  cursor: pointer;
 }
 
 .link-header:hover{
@@ -116,6 +98,7 @@ font-size: x-large;
   transition: 0.3s ease all;
   z-index: 1;
   font-family: "Rancher", cursive;
+  cursor: pointer;
  }
  
  .new-drink-button:before, .placeorder-btn:before {
