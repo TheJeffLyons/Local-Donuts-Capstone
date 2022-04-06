@@ -863,7 +863,7 @@ function PlaceOrder() {
   )
   
   
-}, 50) );
+}, 1000) );
 }
 
 export default PlaceOrder;
