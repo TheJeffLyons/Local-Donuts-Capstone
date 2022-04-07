@@ -1,6 +1,6 @@
 import React from "react";
 import LoginButton from "./LoginButton";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/header.css";
 import LogoutButton from "./LogoutButton";
 import OrderButton from "./OrderButton";
