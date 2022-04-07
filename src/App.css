@@ -1,6 +1,5 @@
 body {
   background-color: rgba(224, 136, 19, 0.288);
-  /* padding-top: 2.6cm; */
 }
 
 .App {
@@ -11,8 +10,4 @@ body {
   margin-right: 30px;
   border: 1px solid rgba(0, 0, 0, 0.109);
   box-shadow: 0px 0px 30px 2px black;
-  
-  /* margin-top: 105px; */
 }
-
-

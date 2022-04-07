@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
@@ -15,7 +15,6 @@ const getStripe = () => {
 };
 
 function PlaceOrder() {
-
   const { user, isAuthenticated } = useAuth0();
   const navigate = useNavigate();
 
@@ -49,10 +48,6 @@ function PlaceOrder() {
   const [pickupBtn, setPickupBtn] = useState(false);
   const [cartTotal, setCartTotal] = useState(0);
   const [drinkData, setDrinkData] = useState([]);
-
-
-
-
 
   //call for donut products
 
@@ -140,8 +135,6 @@ function PlaceOrder() {
     }
   }
 
-
-
   function subAmount1() {
     if (amount1 >= 2) {
       setAmount1(amount1 - 1);
@@ -195,8 +188,6 @@ function PlaceOrder() {
       setAmount9(amount9 - 1);
     }
   }
-
-
 
   //show purchase buttons
 
@@ -590,18 +581,13 @@ function PlaceOrder() {
       items: JSON.stringify(receiptData),
     };
 
-    if(receiptData.length === 0){
-      alert('No items in cart')
-    }else {
-
-    axios
-      .post("/api/neworder", body)
-      // .then((res) => {
-      //   alert(`OrderSent`);
-      // })
-      .then((res) => {
+    if (receiptData.length === 0) {
+      alert("No items in cart");
+    } else {
+      axios.post("/api/neworder", body).then((res) => {
         navigate("/thanks");
-      });}
+      });
+    }
   }
 
   const addDonut = (item, qty, price, name) => {
@@ -657,18 +643,18 @@ function PlaceOrder() {
     function DrinkCard(props) {
       return (
         <div className="card-container">
-        <img
-          className="item-photo"
-          key={"props.photo"}
-          src={"https://" + props.photo}
-        />
-        <h1 className="item-name" key={"props.name"}>
-          {props.name}
-        </h1>
-        <h2 className="item-price" key={"props.price"}>
-          ${props.price}
-        </h2>
-      </div>
+          <img
+            className="item-photo"
+            key={"props.photo"}
+            src={"https://" + props.photo}
+          />
+          <h1 className="item-name" key={"props.name"}>
+            {props.name}
+          </h1>
+          <h2 className="item-price" key={"props.price"}>
+            ${props.price}
+          </h2>
+        </div>
       );
     }
 
@@ -714,7 +700,6 @@ function PlaceOrder() {
     }
   };
 
-
   const ShowPickupCheckout = () => {
     if (pickupBtn === true) {
       document.getElementById("pickup-button").style.backgroundColor =
@@ -757,118 +742,107 @@ function PlaceOrder() {
     console.log("Stripe checkout error", error);
   };
 
-  
-    return (
-    isAuthenticated &&(
-    <div className="order-page">
-      <div>
-        <h1>Welcome {myUser}, select your items below.</h1>
-      </div>
-      <div className="order-options">
-        {/* <a><img src={donutIcon} /></a> */}
-      </div>
-      <div className="order-container">
-        <div className="product-container">
-          <div className="item-card-container" id="card0">
-            {cards[0]}
-            {showButton1()}
-          </div>
-
-          <div className="item-card-container" id="card1">
-            {cards[1]}
-            {showButton2()}
-          </div>
-
-          <div className="item-card-container" id="card2">
-            {cards[2]}
-            {showButton3()}
-          </div>
-
-          <div className="item-card-container" id="card3">
-            {cards[3]}
-            {showButton4()}
-          </div>
-
-          <div className="item-card-container" id="card4">
-            {cards[4]}
-            {showButton5()}
-          </div>
-
-          <div className="item-card-container" id="card5">
-            {cards[5]}
-            {showButton6()}
-          </div>
-
-          <div className="item-card-container" id="card6">
-            {drinkCards[0]}
-            {showButton7()}
-          </div>
-
-          <div className="item-card-container" id="card7">
-            {drinkCards[1]}
-            {showButton8()}
-          </div>
-
-          <div className="item-card-container" id="card8">
-            {drinkCards[2]}
-            {showButton9()}
-          </div>
-
-
+  return (
+    isAuthenticated && (
+      <div className="order-page">
+        <div>
+          <h1>Welcome {myUser}, select your items below.</h1>
         </div>
-
-        <div className="receipt-container">
-          <div className="another-receipt-container">
-            <div className="cart-icon-container">
-              <img
-                className="cart-icon"
-                src="https://res.cloudinary.com/redhero/image/upload/v1648941030/Donuts/shopping-cart_jltry0.png"
-              />
+        <div className="order-options"></div>
+        <div className="order-container">
+          <div className="product-container">
+            <div className="item-card-container" id="card0">
+              {cards[0]}
+              {showButton1()}
             </div>
-            {receiptItems}
-            <div className="checkout-setup">
-              <div>
-                <h1>Total: ${cartTotal}</h1>
+
+            <div className="item-card-container" id="card1">
+              {cards[1]}
+              {showButton2()}
+            </div>
+
+            <div className="item-card-container" id="card2">
+              {cards[2]}
+              {showButton3()}
+            </div>
+
+            <div className="item-card-container" id="card3">
+              {cards[3]}
+              {showButton4()}
+            </div>
+
+            <div className="item-card-container" id="card4">
+              {cards[4]}
+              {showButton5()}
+            </div>
+
+            <div className="item-card-container" id="card5">
+              {cards[5]}
+              {showButton6()}
+            </div>
+
+            <div className="item-card-container" id="card6">
+              {drinkCards[0]}
+              {showButton7()}
+            </div>
+
+            <div className="item-card-container" id="card7">
+              {drinkCards[1]}
+              {showButton8()}
+            </div>
+
+            <div className="item-card-container" id="card8">
+              {drinkCards[2]}
+              {showButton9()}
+            </div>
+          </div>
+
+          <div className="receipt-container">
+            <div className="another-receipt-container">
+              <div className="cart-icon-container">
+                <img
+                  className="cart-icon"
+                  src="https://res.cloudinary.com/redhero/image/upload/v1648941030/Donuts/shopping-cart_jltry0.png"
+                />
               </div>
-              <div className="payment-choice-container">
-                <button
-                  className="payment-choice"
-                  onClick={() => {
-                    setPickupBtn(true);
-                    setDeliveryBtn(false);
-                  }}
-                  id="pickup-button"
-                >
-                  Pickup
-                </button>
-                <button
-                  className="payment-choice"
-                  onClick={() => {
-                    setDeliveryBtn(true);
-                    setPickupBtn(false);
-                  }}
-                  id="delivery-button"
-                >
-                  Delivery
-                </button>
-              </div>
-              <div>
-                {ShowDeliveryCheckout()}
-                {ShowPickupCheckout()}
+              {receiptItems}
+              <div className="checkout-setup">
+                <div>
+                  <h1>Total: ${cartTotal}</h1>
+                </div>
+                <div className="payment-choice-container">
+                  <button
+                    className="payment-choice"
+                    onClick={() => {
+                      setPickupBtn(true);
+                      setDeliveryBtn(false);
+                    }}
+                    id="pickup-button"
+                  >
+                    Pickup
+                  </button>
+                  <button
+                    className="payment-choice"
+                    onClick={() => {
+                      setDeliveryBtn(true);
+                      setPickupBtn(false);
+                    }}
+                    id="delivery-button"
+                  >
+                    Delivery
+                  </button>
+                </div>
+                <div>
+                  {ShowDeliveryCheckout()}
+                  {ShowPickupCheckout()}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  )
-  
-
-) 
-
-
-
-
+    )
+  );
 }
 
 export default PlaceOrder;

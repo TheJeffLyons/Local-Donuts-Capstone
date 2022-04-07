@@ -1,4 +1,4 @@
-import "@stripe/stripe-js"
+import "@stripe/stripe-js";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Donuts from "./pages/Donuts";
@@ -14,23 +14,19 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        
-          <Header />
-        
-        
+        <Header />
+
         <ScrollToTop>
           <Routes>
             <Route path="/" exact element={<Home />} />
             <Route path="donuts" exact element={<Donuts />} />
             <Route path="drinks" exact element={<Drinks />} />
             <Route path="order" exact element={<PlaceOrder />} />
-            <Route path="thanks" exact element={<Thankyou />} />            
+            <Route path="thanks" exact element={<Thankyou />} />
           </Routes>
         </ScrollToTop>
-        
-        
-          <Footer />
-        
+
+        <Footer />
       </div>
     </BrowserRouter>
   );

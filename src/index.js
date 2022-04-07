@@ -12,7 +12,6 @@ ReactDOM.render(
     domain={domain}
     clientId={clientId}
     redirectUri={`${window.location.origin}/order`}
-    
   >
     <App />
   </Auth0Provider>,
