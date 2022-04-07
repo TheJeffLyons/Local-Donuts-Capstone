@@ -21,8 +21,18 @@ function Header() {
             <Link to="/drinks" className="link-header">
               <h1>Drinks</h1>
             </Link> */}
-            <button className="new-drink-button" onClick={() => navigate("/donuts")}>Donuts</button>
-            <button className="new-drink-button" onClick={() => navigate("/drinks")}>Drinks</button>
+            <button
+              className="new-drink-button"
+              onClick={() => navigate("/donuts")}
+            >
+              Donuts
+            </button>
+            <button
+              className="new-drink-button"
+              onClick={() => navigate("/drinks")}
+            >
+              Drinks
+            </button>
           </div>
 
           <div className="header-mid">
@@ -35,14 +45,10 @@ function Header() {
           </div>
 
           <div className="header-right">
-            <div className="header-left">
-              <OrderButton />
-            </div>
+            <OrderButton />
 
-            <div>
-              <LoginButton />
-              <LogoutButton />
-            </div>
+            <LoginButton />
+            <LogoutButton />
           </div>
         </div>
       </nav>
