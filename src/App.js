@@ -14,10 +14,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <div className="app-header">
+        
           <Header />
-        </div>
-        <div className="app-body">
+        
+        
         <ScrollToTop>
           <Routes>
             <Route path="/" exact element={<Home />} />
@@ -27,10 +27,10 @@ function App() {
             <Route path="thanks" exact element={<Thankyou />} />            
           </Routes>
         </ScrollToTop>
-        </div>
-        <div className="app-footer">
+        
+        
           <Footer />
-        </div>
+        
       </div>
     </BrowserRouter>
   );
