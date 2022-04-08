@@ -1,6 +1,6 @@
 #**Local Donuts**
 
-Local Donuts is a make-believe e-commerce donut shop. It is a full stack web application that allows user to create an account managed securely through Auth0, add and remove items from a cart, create pickup and delivery orders, and make card payments using the Stripe payment system.
+Local Donuts is a make-believe e-commerce donut shop. It is a full stack web application that allows users to create an account managed securely through Auth0, add and remove items from a cart, create pickup and delivery orders, and make card payments using the Stripe payment system.
 
 
 ##**Technologies:**
