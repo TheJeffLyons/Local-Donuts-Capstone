@@ -5,6 +5,7 @@ import Donuts from "./pages/Donuts";
 import Drinks from "./pages/Drinks";
 import Thankyou from "./pages/Thankyou";
 import PlaceOrder from "./pages/PlaceOrder";
+import LinkToGithub from "./components/LinkToGithub";
 import "./App.css";
 import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -14,6 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <LinkToGithub />
         <Header />
 
         <ScrollToTop>
