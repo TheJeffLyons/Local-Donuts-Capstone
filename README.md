@@ -5,7 +5,14 @@ Local Donuts is a make-believe e-commerce donut shop. It is a full stack web app
 
 ## **Technologies:**
 
-React, JavaScript, Node.js, PostegreSQL, Express, HTML/CSS, Auth0, Stripe
+- React 
+- JavaScript 
+- Node.js 
+- PostegreSQL 
+- Express 
+- HTML/CSS 
+- Auth0 
+- Stripe
 
 Hosted on Heroku at: https://local-donuts.herokuapp.com/
 
