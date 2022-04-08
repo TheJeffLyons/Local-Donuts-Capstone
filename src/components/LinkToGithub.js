@@ -6,7 +6,7 @@ function LinkToGithub() {
   return (
       <div className="github">
     <a rel="noopener noreferrer" target="_blank" href="https://github.com/TheJeffLyons/Local-Donuts-Capstone">
-                          <h6 className="github-btn">Link to Github</h6>
+                          <h6 className="github-btn">View Github</h6>
                           </a>
                           </div>
   );
